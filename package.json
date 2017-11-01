@@ -1,0 +1,48 @@
+{
+  "name": "frosty-feather",
+  "version": "1.0.0",
+  "description": "My app description",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:css": "node-sass public/css/main.scss > public/css/main.css",
+    "deploy": "npm test && git push heroku master",
+    "migrate:make": "knex migrate:make",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate": "knex migrate:latest",
+    "postinstall": "npm run build",
+    "start": "node server.js",
+    "test": "mocha",
+    "dev": "npm-run-all --parallel watch:*",
+    "watch:css": "nodemon -e scss -w public/css -x npm run build:css",
+    "watch:js": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bookshelf": "^0.10.4",
+    "compression": "^1.6.2",
+    "density": "^0.1.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.2.1",
+    "express-validator": "^2.20.4",
+    "knex": "^0.13.0",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0",
+    "mysql": "^2.15.0",
+    "node-sass": "^3.6.0",
+    "nodemailer": "^2.3.0",
+    "nodemon": "^1.9.1",
+    "npm-run-all": "^1.8.0",
+    "nunjucks": "^2.4.1",
+    "osmosis": "^1.1.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.2.0"
+  }
+}
