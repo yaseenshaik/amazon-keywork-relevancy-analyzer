@@ -26,6 +26,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.2.1",
     "express-validator": "^2.20.4",
+    "isomorphic-fetch": "^2.2.1",
     "knex": "^0.13.0",
     "lodash": "^4.17.4",
     "method-override": "^2.3.5",
